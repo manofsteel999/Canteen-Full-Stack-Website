@@ -17,7 +17,16 @@ router.get('/', function (req, res, next) {
   );
 });
 
+router.get('/landing', function(req, res) {
+  res.render('landing');
+});
 
+router.get('/mech', function(req, res) {
+  res.render('mech');
+});
+router.get('/csit', function(req, res) {
+  res.render('mech');
+});
 
 
 router.get('/add/:id', function(req, res, next) {
