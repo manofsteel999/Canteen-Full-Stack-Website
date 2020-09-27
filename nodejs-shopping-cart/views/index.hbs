@@ -1,4 +1,8 @@
-<h1 >{{title}}</h1>
+<div class="jumbotron" style="margin-bottom: 0px">
+        <div class="container">
+
+
+<h1 style="margin-top:1rem" >{{title}}</h1>
 <p>Welcome to the {{title}}</p>
 
 {{# each products }}
@@ -9,7 +13,7 @@
           <h3>{{ this.title }}</h3>
             <p class="description">{{{this.description}}}</p>
             <div class="clearfix">
-            <div class="price pull-left"><i class="fa fa-tag" aria-hidden="true"></i> {{ this.price }} CHF </div>
+            <div class="price pull-left"><i class="fa fa-tag" aria-hidden="true"></i> {{ this.price }} $ </div>
               <a href="/add/{{ this.id }}" class="btn btn-default pull-right" role="button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</a>
             </div>
         </div>
@@ -17,3 +21,15 @@
     </div>
   </div>
 {{/each}}
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+

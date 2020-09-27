@@ -10,11 +10,13 @@ var hbs = require('hbs');
 var session = require('express-session');
 var passport= require('passport');
 var flash= require('connect-flash');
+var validator=require('express-validator');
+
 
 var index = require('./routes/index');
 
 var app = express();
-mongoose.connect('mongodb://localhost:27017/shopping', function(error){
+mongoose.connect('mongodb+srv://Avinesh:avineshgupta000@cluster0.82e3z.mongodb.net/shopping?retryWrites=true&w=majority', function(error){
    if(error) {
     console.log("There was an error connecting to MongoDB.");
     console.log(error);
@@ -33,6 +35,7 @@ app.set('view engine', 'hbs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(validator());
 app.use(cookieParser());
 app.use(express.static('views/images'));
 app.use(session({

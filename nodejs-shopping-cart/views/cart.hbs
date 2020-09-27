@@ -1,6 +1,10 @@
-<h1>{{title}}</h1>
+<div class="jumbotron" style="margin-bottom: 0px">
+        <div class="container">
+
+
+<h1 style="margin-top:1rem" >{{title}}</h1>
 {{# if products }}
-    <div class="cart page">
+    <div  class="cart page">
         <ul class="list-group">
             {{# each products }}
             <li class="list-group-item clearfix">
@@ -15,7 +19,7 @@
                     {{ this.price }} CHF
                 </div>
                 <div class="col-xs-2 text-right">
-                    <a href="/remove/{{this.item.id}}" class="btn btn-default"></i> Remove</a>
+                    <h3 href="/remove/{{this.item.id}}" class="btn btn-default"></i> Remove</h3>
                 </div>
             </li>
             {{/each}}
@@ -31,3 +35,5 @@
 {{ else }}
     Your shopping cart is empty.
 {{/if}}
+</div>
+</div>

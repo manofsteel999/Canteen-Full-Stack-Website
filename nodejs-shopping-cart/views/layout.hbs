@@ -13,7 +13,7 @@
   <header id='header'>    
     
     <nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top scrolled">
-       <i class="fa fa-circle fa-lg"></i>
+       <div id="circle"></div>
         <a href="#" class="navbar-brand">AKGEC CANTEEN </a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -21,7 +21,7 @@
         <div class="collapse navbar-collapse" id="navLinks">
             <ul class="navbar-nav ">
                 <li class="nav-item menu-active">
-                    <a href="/" class="nav-link">HOME</a>
+                    <a href="/landing" class="nav-link">HOME</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">ABOUT</a>
@@ -32,6 +32,7 @@
             </ul>
             <ul class="navbar-nav ml-auto" style="padding-right: 1rem">
               
+              <li  class="nav-item"><a href="/user/signup" class="nav-link">Log In</a></li>
               <li class="nav-item"> <div class="dropleft show pull-right">
                 <a class=" dropdown-toggle Special" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               <a href="" class="nav-link"><span class="fa  fa-shopping-cart" aria-hidden="true"></span>
@@ -80,8 +81,7 @@
 
 
        <div>
-           <link rel='stylesheet' href='/stylesheets/Login.css' >
-      
+        
        {{{body}}}
       </div> 
   <link rel='stylesheet' href='/stylesheets/style.css' >
@@ -91,9 +91,9 @@
 
     <div class="row">
 
-      <div style="color: #fff" class="col-md-4 mx-auto">
+      <div style="color: #fff" class="col-md-4 mx-auto ">
 
-        <h4  class="font-weight-bold text-uppercase mt-3 mb-4"> <i class="fa fa-circle fa-lg"></i>AKGEC CANTEEN</h4>
+       <h4  class="font-weight-bold text-uppercase mt-3 mb-4">  <div class="final" id="circle"></div> AKGEC CANTEEN</h4>
         <p>Welcome to the official AKGEC CANTEEN website. Here you can order online in sitting in your classroom. So have good food guys...</p>
 
       </div>
@@ -181,8 +181,7 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="/javascripts/Login.js"></script>
-
+  
 
    </body>
 </html>
