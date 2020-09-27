@@ -14,7 +14,7 @@
                     </div> 
                     <div class="blmd-continer">
                         <!-- @ Login form container -->
-                        <form action="/user/signup" class="clearfix" id="login-form" >
+                        <form action="" class="clearfix" id="login-form" >
                             <h1>Login Page</h1>
                             <div class="col-md-12">
                                 
@@ -37,31 +37,26 @@
                             <br/>
                         </form>
                         <!-- @ Login form container -->
-                        <form action="post" class="clearfix form-hidden" id="Register-form">
+                        <form action="/user/signup" method="post" class="clearfix form-hidden" id="Register-form">
                             <h1>Register Page</h1>
                             <div class="col-md-12">
                                 
                                 <div class="input-group blmd-form">
                                     <div class="blmd-line">
-                                        <input type="text" name="username" autocomplete="off" id="username" class="form-control">
-                                        <label class="blmd-label">Email or Username</label>
+                                        <input type="text" name="email" autocomplete="off" id="email" class="form-control">
+                                        <label for="email" class="blmd-label">Email or Username</label>
                                     </div>
                                 </div>
                                 <div class="input-group blmd-form">
                                     <div class="blmd-line">
                                         <input type="password" name="password" autocomplete="off" id="password" class="form-control">
-                                        <label class="blmd-label">Password</label>
+                                        <label for="password" class="blmd-label">Password</label>
                                     </div>
                                 </div>
-                                 <div class="input-group blmd-form">
-                                    <div class="blmd-line">
-                                        <input type="password" name="rePassword" autocomplete="off" id="password" class="form-control">
-                                        <label class="blmd-label">Repeat Password</label>
-                                    </div>
-                                </div>
+                                 
                             </div>
                             <div class="col-sm-12 text-center">
-                                <button type="button" class="btn btn-blmd ripple-effect btn-warning btn-lg btn-block">Register</button>
+                                <button type="button submit" class="btn btn-blmd ripple-effect btn-warning btn-lg btn-block">Register</button>
                             </div>
                             <br/>
                         </form>

@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var fs = require('fs');
-
+var passport=require('passport');
 var Cart = require('../models/cart');
 var products = JSON.parse(fs.readFileSync('./data/products.json', 'utf8'));
 
@@ -57,11 +57,20 @@ router.get('/remove/:id', function(req, res, next) {
 });
 
 router.get('/user/signup', function(req,res,next){
+  var messages=req.flash('error');
   res.render('user/signup');
 })
 
-router.post('/user/signup', function(req,res,next){
-  res.redirect('/');
-})
+// If signup is success we get directed to profile.hbs
+router.post('/user/signup', passport.authenticate('local.signup', {
+  successRedirect: '/user/profile',
+  failureRedirect: '/user/signup',
+  failureFlash: true
+  
+}));
+
+router.get('/user/profile', function(req,res,next){
+  res.render('user/profile');
+});
 
 module.exports = router;

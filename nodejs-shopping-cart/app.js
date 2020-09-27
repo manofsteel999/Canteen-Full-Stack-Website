@@ -8,12 +8,21 @@ var bodyParser = require('body-parser');
 
 var hbs = require('hbs');
 var session = require('express-session');
+var passport= require('passport');
+var flash= require('connect-flash');
 
 var index = require('./routes/index');
 
 var app = express();
-mongoose.connect('localhost:27017/shopping');
-
+mongoose.connect('mongodb://localhost:27017/shopping', function(error){
+   if(error) {
+    console.log("There was an error connecting to MongoDB.");
+    console.log(error);
+  } else {
+    console.log("Successfully connected to MongoDB!");
+  }
+});
+require('./config/passport');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 hbs.registerPartials(__dirname + '/views/partials');
@@ -29,7 +38,11 @@ app.use(session({
   secret: 'secret',
   resave: false,
   saveUninitialized: true
-}))
+}));
+
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // res.locals is an object passed to hbs engine
