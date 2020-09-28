@@ -38,6 +38,7 @@ app.use(logger('dev'));
 app.use(validator());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(validator());
 app.use(cookieParser());
 app.use(express.static('views/images'));
 app.use(session({
