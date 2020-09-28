@@ -11,12 +11,12 @@ var session = require('express-session');
 var passport= require('passport');
 var flash= require('connect-flash');
 var validator=require('express-validator');
-
-
+var User = require("./models/user");
+var LocalStrategy   = require("passport-local");
 var index = require('./routes/index');
 
 var app = express();
-mongoose.connect('mongodb+srv://Avinesh:avineshgupta000@cluster0.82e3z.mongodb.net/shopping?retryWrites=true&w=majority', function(error){
+mongoose.connect('mongodb+srv://Avinesh:avineshgupta000@cluster0.82e3z.mongodb.net/shopping?retryWrites=true&w=majority',{ useNewUrlParser: true, useUnifiedTopology: true},function(error){
    if(error) {
     console.log("There was an error connecting to MongoDB.");
     console.log(error);
@@ -33,9 +33,11 @@ app.set('view engine', 'hbs');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
+//app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded({ extended: false }));
+app.use(validator());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(validator());
 app.use(cookieParser());
 app.use(express.static('views/images'));
 app.use(session({
@@ -47,6 +49,13 @@ app.use(session({
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+app.use(function(req, res, next) {
+  res.locals.currentUser = req.user;
+  next();
+});
 app.use(express.static(path.join(__dirname, 'public')));
 
 // res.locals is an object passed to hbs engine

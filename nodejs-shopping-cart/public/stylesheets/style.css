@@ -218,6 +218,9 @@ div.regen{
  margin-top: 5rem;
  margin-bottom: 4rem;
 }
-div.starry{
-  
+
+div.laster{
+  position: relative;
+  top:1.8rem;
+  left: 1rem ;
 }
